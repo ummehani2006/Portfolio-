@@ -31,11 +31,10 @@
 
 ## 💫 About Me
 
-I am a dedicated **Full Stack Web Developer** with hands-on experience across front-end design, back-end web systems, and AI API integrations[cite: 1]. As **Co-Founder at DevIgnite Studio**, I blend creative UI designs with robust backend logic to build seamless web applications[cite: 1]. 
-
-- 🎓 Pursuing **BS in Data Science** at Sir Syed University of Engineering & Technology (SSUET)[cite: 1].
-- 📜 Completing **Diploma in Web Development** at Aptech Learning[cite: 1].
-- 🤖 Passionate about building intelligent web apps powered by Large Language Models (LLMs) & Machine Learning[cite: 1].
+I am a dedicated **Full Stack Web Developer** with hands-on experience across front-end design, back-end web systems, and AI API integrations. As **Co-Founder at DevIgnite Studio**, I blend creative UI designs with robust backend logic to build seamless web applications
+- 🎓 Pursuing **BS in Data Science** at Sir Syed University of Engineering & Technology (SSUET)
+- 📜 Completing **Diploma in Web Development** at Aptech Learning
+- 🤖 Passionate about building intelligent web apps powered by Large Language Models (LLMs) & Machine Learning
 
 <br />
 
@@ -102,7 +101,7 @@ I am a dedicated **Full Stack Web Developer** with hands-on experience across fr
 ---
 
 ### 🚗 Worldwide Car Booking Platform
-> **Tech Stack:** `HTML5/CSS3` | `JavaScript` | `PHP` | `MySQL`[cite: 1]
+> **Tech Stack:** `HTML5/CSS3` | `JavaScript` | `PHP` | `MySQL`
 
 - Client project delivering a worldwide car browsing and online reservation portal[cite: 1].
 - Features automated PDF booking downloads and an integrated second-hand car marketplace[cite: 1].
