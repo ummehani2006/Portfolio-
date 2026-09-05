@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="banner.png" alt="Portfolio Banner" width="100%" />
+  <img src="banner.png" alt="Welcome to My Portfolio Banner" width="100%" />
 </p>
+
+# 🌟 Personal Portfolio — Umm-e-Hani Kamal
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
@@ -25,18 +27,15 @@
   </a>
 </p>
 
-<br />
-
 ---
 
 ## 💫 About Me
 
-I am a dedicated **Full Stack Web Developer** with hands-on experience across front-end design, back-end web systems, and AI API integrations. As **Co-Founder at DevIgnite Studio**, I blend creative UI designs with robust backend logic to build seamless web applications
-- 🎓 Pursuing **BS in Data Science** at Sir Syed University of Engineering & Technology (SSUET)
-- 📜 Completing **Diploma in Web Development** at Aptech Learning
-- 🤖 Passionate about building intelligent web apps powered by Large Language Models (LLMs) & Machine Learning
+I am a dedicated **Full Stack Web Developer** with hands-on experience across front-end design, back-end web systems, and AI API integrations[cite: 1]. As **Co-Founder at DevIgnite Studio**, I blend creative UI designs with robust backend logic to build seamless web applications[cite: 1]. 
 
-<br />
+- 🎓 Pursuing **BS in Data Science** at Sir Syed University of Engineering & Technology (SSUET)[cite: 1].
+- 📜 Completing **Diploma in Web Development** at Aptech Learning[cite: 1].
+- 🤖 Passionate about building intelligent web apps powered by Large Language Models (LLMs) & Machine Learning[cite: 1].
 
 ---
 
@@ -85,8 +84,6 @@ I am a dedicated **Full Stack Web Developer** with hands-on experience across fr
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
 </p>
 
-<br />
-
 ---
 
 ## 🚀 Featured Projects
@@ -101,7 +98,7 @@ I am a dedicated **Full Stack Web Developer** with hands-on experience across fr
 ---
 
 ### 🚗 Worldwide Car Booking Platform
-> **Tech Stack:** `HTML5/CSS3` | `JavaScript` | `PHP` | `MySQL`
+> **Tech Stack:** `HTML5/CSS3` | `JavaScript` | `PHP` | `MySQL`[cite: 1]
 
 - Client project delivering a worldwide car browsing and online reservation portal[cite: 1].
 - Features automated PDF booking downloads and an integrated second-hand car marketplace[cite: 1].
@@ -125,28 +122,7 @@ I am a dedicated **Full Stack Web Developer** with hands-on experience across fr
 ### 🌐 DevIgnite Studio Website
 > **Tech Stack:** `HTML5` | `CSS3` | `JavaScript`[cite: 1]
 
-- Official digital agency agency showcase site presenting custom web engineering and design service packages[cite: 1].
-
-<br />
-
----
-
-## 💼 Professional Experience
-+-----------------------------------------------------------------------------------+
-|  Freelance Web Developer & Project Coordinator                                     |
-|  Oct 2024 - Present                                                               |
-|  • Developed client solutions using HTML5, CSS3, JS, PHP, and MySQL.              |
-|  • Designed clean, mobile-first responsive UI/UX architectures.                   |
-|  • Coordinated workflows and project delivery milestones using Trello.            |
-+-----------------------------------------------------------------------------------+
-|  Sales Representative (Intern) — IJKMedia                                         |
-|  Nov 2025 - Jan 2026                                                              |
-|  • Handled corporate client communications and service delivery pipelines.        |
-+-----------------------------------------------------------------------------------+
-
-[cite: 1]
-
-<br />
+- Official digital agency showcase site presenting custom web engineering and design service packages[cite: 1].
 
 ---
 
@@ -159,26 +135,18 @@ I am a dedicated **Full Stack Web Developer** with hands-on experience across fr
   - *Basics of Digital Marketing* — UniAthena (UK)[cite: 1]
   - *Basics of Multinational Enterprises* — UniAthena (UK)[cite: 1]
 
-<br />
-
 ---
 
-## 📊 Animated GitHub Metrics
+## 📊 GitHub Profile Overview
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=ummehani2006&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ummehani2006&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="160" src="https://github-readme-stats-git-masterrst-anuraghazra1.vercel.app/api?username=ummehani2006&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" />
+  <img height="160" src="https://github-readme-stats-git-masterrst-anuraghazra1.vercel.app/api/top-langs/?username=ummehani2006&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
 </p>
-
-<br />
 
 ---
 
 ## 📬 Contact & Connect
-
-<p align="center">
-  Feel free to reach out for project collaborations, web development services, or technical inquiries!
-</p>
 
 <p align="center">
   📧 <strong>Email:</strong> <a href="mailto:hanikamal700@gmail.com">hanikamal700@gmail.com</a><br>
