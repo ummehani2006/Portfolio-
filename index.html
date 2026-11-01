@@ -71,7 +71,6 @@ body {
   color: var(--white);
   font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
-  cursor: none;
   min-height: 100vh;
 }
 
@@ -158,43 +157,19 @@ body {
   visibility: hidden;
 }
 
-/* CUSTOM CURSOR */
-#cur, #cur2 {
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-}
-#cur {
-  width: 8px;
-  height: 8px;
-  background: var(--teal-light);
-  box-shadow: 0 0 10px var(--teal);
-  transition: transform 0.08s ease;
-}
-#cur2 {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(45, 212, 191, 0.5);
-  box-shadow: 0 0 20px rgba(225, 29, 72, 0.2);
-  transition: all 0.16s ease-out;
-  margin: -14px 0 0 -14px;
-}
-
-/* NAVIGATION */
+/* NAVIGATION (RESPONSIVE NO-WRAP LOGO) */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 200;
-  padding: 0 64px;
-  height: 78px;
+  padding: 0 48px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   background: rgba(7, 13, 16, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -203,13 +178,15 @@ nav {
 .logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--white);
   letter-spacing: -0.5px;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .logo span {
   color: var(--teal-light);
@@ -220,18 +197,19 @@ nav {
 }
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
 }
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: all 0.25s;
   letter-spacing: 0.3px;
   position: relative;
   padding: 4px 0;
+  white-space: nowrap;
 }
 .nav-links a::after {
   content: '';
@@ -254,18 +232,19 @@ nav {
   background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(225, 29, 72, 0.1));
   border: 1px solid var(--teal-border);
   color: var(--teal-light);
-  padding: 10px 22px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-family: 'Syne', sans-serif;
   font-weight: 700;
   font-size: 0.82rem;
   letter-spacing: 0.5px;
-  cursor: none;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .nav-dl:hover {
   background: var(--grad-teal);
@@ -273,6 +252,9 @@ nav {
   border-color: var(--teal-light);
   box-shadow: 0 0 25px var(--teal-glow);
   transform: translateY(-2px);
+}
+.nav-dl .dl-short {
+  display: none;
 }
 
 /* HERO SECTION */
@@ -282,7 +264,7 @@ nav {
   grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
   gap: 50px;
   align-items: center;
-  padding: 130px 64px 80px;
+  padding: 130px 48px 80px;
   position: relative;
   z-index: 1;
 }
@@ -471,7 +453,6 @@ h1 .outline {
   font-weight: 700;
   font-size: 0.88rem;
   text-decoration: none;
-  cursor: none;
   transition: all 0.28s ease;
   display: inline-flex;
   align-items: center;
@@ -492,7 +473,6 @@ h1 .outline {
   font-weight: 700;
   font-size: 0.88rem;
   text-decoration: none;
-  cursor: none;
   transition: all 0.28s ease;
   display: inline-flex;
   align-items: center;
@@ -512,7 +492,6 @@ h1 .outline {
   font-weight: 600;
   font-size: 0.88rem;
   text-decoration: none;
-  cursor: none;
   transition: all 0.25s ease;
   background: rgba(255, 255, 255, 0.03);
   display: inline-flex;
@@ -559,7 +538,7 @@ h1 .outline {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   display: block;
   border-radius: 20px;
   filter: contrast(1.03) brightness(1.02);
@@ -651,14 +630,16 @@ h1 .outline {
   font-size: 0.86rem;
   display: block;
   font-family: 'Syne', sans-serif;
+  white-space: nowrap;
 }
 .badge-text span {
   color: var(--muted);
+  white-space: nowrap;
 }
 
 /* SECTION SHARED STYLING */
 section {
-  padding: 110px 64px;
+  padding: 100px 48px;
   position: relative;
   z-index: 1;
 }
@@ -682,10 +663,11 @@ section {
 }
 .sec-title {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
-  letter-spacing: -1.5px;
-  margin-bottom: 45px;
+  letter-spacing: -1.2px;
+  margin-bottom: 40px;
+  line-height: 1.15;
 }
 .sec-title span {
   background: var(--grad-hero);
@@ -699,7 +681,7 @@ section {
   background: var(--grad-card);
   border: 1px solid var(--card-border);
   border-radius: 24px;
-  padding: 48px;
+  padding: 44px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
@@ -732,7 +714,7 @@ section {
   z-index: 2;
 }
 .about-text p {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .about-text p:last-child {
   margin-bottom: 0;
@@ -751,7 +733,7 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 36px;
+  margin-top: 32px;
   position: relative;
   z-index: 2;
 }
@@ -819,7 +801,7 @@ section {
   background: var(--s2);
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 28px;
+  padding: 26px;
   transition: all 0.3s ease;
   cursor: default;
 }
@@ -832,7 +814,7 @@ section {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .sk-icon {
   width: 42px;
@@ -875,7 +857,9 @@ section {
   transform: translateY(-2px);
 }
 
-/* EXPERIENCE SECTION */
+/* ==========================================================
+   EXPERIENCE SECTION (CLEAN FULL-WIDTH NATURAL BULLET WRAP)
+   ========================================================== */
 .exp-list {
   display: flex;
   flex-direction: column;
@@ -885,30 +869,47 @@ section {
 .ex-card {
   background: var(--s2);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 32px 36px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
+  border-radius: 20px;
+  padding: 30px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   transition: all 0.25s ease;
 }
 .ex-card:hover {
   border-color: var(--teal-light);
-  transform: translateX(8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transform: translateX(6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+.ex-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.ex-top-info {
+  flex: 1 1 300px;
+  min-width: 0;
 }
 .ex-role {
   font-family: 'Syne', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: var(--white);
+  line-height: 1.35;
+  letter-spacing: -0.2px;
 }
 .ex-co {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--teal-light);
-  margin-bottom: 18px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 .ex-date {
   font-size: 0.78rem;
@@ -916,35 +917,44 @@ section {
   background: var(--teal-subtle);
   border: 1px solid var(--teal-border);
   padding: 6px 16px;
-  border-radius: 20px;
+  border-radius: 999px;
   height: fit-content;
   white-space: nowrap;
   font-weight: 600;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
 .ex-pts {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
 }
 .ex-pts li {
-  font-size: 0.9rem;
+  font-size: 0.94rem;
   color: var(--muted-light);
-  padding-left: 22px;
+  padding-left: 24px;
   position: relative;
-  line-height: 1.65;
+  line-height: 1.7;
+  word-break: normal;
+  overflow-wrap: break-word;
+  width: 100%;
 }
 .ex-pts li::before {
   content: '›';
   position: absolute;
   left: 0;
   color: var(--wine-light);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   line-height: 1;
+  top: 1px;
+  font-weight: 700;
 }
 
 /* ==========================================================
-   PROJECTS SECTION (FULL-COVER IMAGES)
+   PROJECTS SECTION (PROPER FULL-COVER IMAGES)
    ========================================================== */
 #projects {
   background: var(--s1);
@@ -978,7 +988,6 @@ section {
   box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5), 0 0 25px var(--wine-glow);
 }
 
-/* FULL BLEED IMAGE HEADER (Fixes small 80px thumbnail issue) */
 .proj-top {
   height: 200px;
   width: 100%;
@@ -1259,7 +1268,6 @@ section {
   color: var(--wine-light);
 }
 
-/* DIRECT VIEW BUTTON (Clean & focused as requested) */
 .cert-view-btn {
   width: 100%;
   background: rgba(255, 255, 255, 0.04);
@@ -1293,7 +1301,7 @@ section {
 }
 
 /* ==========================================================
-   CLEAN LIGHTBOX MODAL (PURE VIEW FOCUS WITH CLOSE)
+   CLEAN LIGHTBOX DIALOG (PURE VIEW FOCUS WITH CLOSE)
    ========================================================== */
 dialog.cert-dialog {
   border: 1px solid var(--teal-border);
@@ -1533,7 +1541,7 @@ dialog.cert-dialog::backdrop {
 /* FOOTER */
 footer {
   border-top: 1px solid var(--border);
-  padding: 32px 64px;
+  padding: 32px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1577,9 +1585,8 @@ footer span {
 }
 
 /* ==========================================================
-   COMPREHENSIVE RESPONSIVENESS (MOBILE, TABLET, LAPTOP, DESKTOP)
+   RESPONSIVENESS (MOBILE, TABLET, LAPTOP, DESKTOP)
    ========================================================== */
-/* Large Desktop (1440px+) */
 @media (min-width: 1440px) {
   .hero, section, footer {
     max-width: 1400px;
@@ -1588,30 +1595,28 @@ footer span {
   }
 }
 
-/* Laptops & Tablets (901px - 1200px) */
 @media (max-width: 1200px) {
   nav {
-    padding: 0 36px;
+    padding: 0 32px;
   }
   .hero {
-    padding: 120px 36px 60px;
+    padding: 120px 32px 60px;
     gap: 36px;
   }
   section {
-    padding: 90px 36px;
+    padding: 85px 32px;
   }
   .proj-grid, .certs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablets (769px - 900px) */
 @media (max-width: 900px) {
   nav {
     padding: 0 24px;
   }
   .nav-links {
-    gap: 20px;
+    gap: 18px;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -1632,7 +1637,7 @@ footer span {
     margin-right: auto;
   }
   .hero-right {
-    margin-top: 15px;
+    margin-top: 20px;
   }
   .photo-wrap {
     max-width: 350px;
@@ -1657,37 +1662,66 @@ footer span {
   }
 }
 
-/* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
   nav {
-    padding: 0 18px;
-    height: 70px;
+    padding: 0 16px;
+    height: 64px;
+    gap: 8px;
   }
   .nav-links {
-    display: none; /* Mobile view: clean header */
+    display: none;
+  }
+  .logo {
+    font-size: 1.18rem;
+    white-space: nowrap;
+    letter-spacing: -0.3px;
+    flex-shrink: 0;
   }
   .nav-dl {
-    padding: 8px 16px;
-    font-size: 0.78rem;
+    padding: 7px 12px;
+    font-size: 0.72rem;
+    border-radius: 6px;
+    flex-shrink: 0;
   }
+  .nav-dl .dl-full {
+    display: none;
+  }
+  .nav-dl .dl-short {
+    display: inline;
+  }
+  
   .hero {
-    padding: 95px 18px 50px;
+    padding: 85px 16px 50px;
     gap: 36px;
+    text-align: center;
+  }
+  .hero-badge-row {
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .hero-tag, .hero-hack-tag {
+    font-size: 0.72rem;
+    padding: 5px 12px;
   }
   h1 {
-    font-size: clamp(2.3rem, 8.5vw, 3.2rem);
+    font-size: clamp(2.2rem, 8.5vw, 3.2rem);
     letter-spacing: -1px;
+    line-height: 1.05;
   }
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     line-height: 1.65;
+    margin-top: 18px;
+    padding: 0 4px;
   }
   .hero-stats {
     width: 100%;
     max-width: 380px;
+    margin-top: 24px;
   }
   .stat {
-    padding: 12px 16px;
+    padding: 12px 14px;
     flex: 1;
   }
   .stat-n {
@@ -1700,80 +1734,193 @@ footer span {
     width: 100%;
     flex-direction: column;
     align-items: stretch;
+    margin-top: 24px;
+    gap: 12px;
   }
   .btn-p, .btn-wine, .btn-s {
     justify-content: center;
     width: 100%;
-    padding: 13px 20px;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+
+  /* PHOTO CARD ON MOBILE */
+  .hero-right {
+    margin-top: 15px;
+    width: 100%;
   }
   .photo-wrap {
-    max-width: 300px;
-    height: 420px;
+    max-width: 290px;
+    height: 390px;
+    margin: 20px auto 25px;
   }
-  .floating-badge-top, .floating-badge {
-    padding: 8px 12px;
+  .photo-frame {
+    border-radius: 20px;
+    padding: 6px;
+  }
+  #heroImg {
+    border-radius: 16px;
+  }
+  .floating-badge-top {
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    padding: 6px 12px;
     border-radius: 10px;
+    gap: 8px;
+  }
+  .floating-badge {
+    bottom: -16px;
+    right: 50%;
+    transform: translateX(50%);
+    width: max-content;
+    max-width: 90%;
+    padding: 6px 12px;
+    border-radius: 10px;
+    gap: 8px;
   }
   .badge-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    border-radius: 8px;
   }
   .badge-text strong {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
   }
   .badge-text span {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
   }
+
+  /* SECTIONS ON MOBILE */
   section {
-    padding: 65px 18px;
+    padding: 65px 16px;
   }
   .sec-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
-    margin-bottom: 30px;
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+    margin-bottom: 28px;
   }
   .about-box {
-    padding: 24px;
+    padding: 24px 18px;
+    border-radius: 18px;
   }
-  .skills-row, .proj-grid, .certs-grid, .edu-grid, .milestones-grid {
+  .about-text {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+  .milestones-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .milestone-card {
+    padding: 16px;
+  }
+
+  /* EXPERIENCE CARD MOBILE: CLEAN NATURAL WRAP */
+  .exp-list {
+    width: 100%;
+    gap: 18px;
+  }
+  .ex-card {
+    padding: 22px 18px;
+    gap: 16px;
+    border-radius: 16px;
+    width: 100%;
+  }
+  .ex-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  .ex-top-info {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .ex-role {
+    font-size: 1.12rem;
+    line-height: 1.35;
+  }
+  .ex-co {
+    font-size: 0.88rem;
+  }
+  .ex-date {
+    font-size: 0.74rem;
+    padding: 4px 12px;
+    order: -1;
+    align-self: flex-start;
+  }
+  .ex-pts {
+    gap: 10px;
+    width: 100%;
+  }
+  .ex-pts li {
+    font-size: 0.88rem;
+    padding-left: 20px;
+    line-height: 1.65;
+    width: 100%;
+  }
+
+  /* SKILLS, PROJECTS & CERTS GRIDS */
+  .skills-row, .proj-grid, .certs-grid, .edu-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .sk-card {
+    padding: 22px 18px;
   }
   .proj-top {
     height: 190px;
   }
+  .proj-body {
+    padding: 20px 18px;
+  }
   .cert-img-wrap {
     height: 200px;
   }
+  .cert-info {
+    padding: 18px;
+  }
   .cert-tabs {
     gap: 8px;
+    margin-bottom: 25px;
   }
   .cert-tab {
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-size: 0.76rem;
   }
   .contact-card {
-    padding: 40px 20px;
+    padding: 40px 18px;
+    border-radius: 20px;
   }
   .contact-links {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
   .c-link {
     justify-content: center;
     width: 100%;
+    padding: 12px 18px;
+    font-size: 0.88rem;
   }
   footer {
     flex-direction: column;
-    gap: 12px;
-    padding: 24px 18px;
+    gap: 10px;
+    padding: 24px 16px;
     text-align: center;
+    font-size: 0.8rem;
   }
+
+  /* DIALOG ON MOBILE */
   dialog.cert-dialog {
-    width: 96vw;
+    width: 95vw;
   }
   .dialog-header {
-    padding: 14px 18px;
+    padding: 14px 16px;
   }
   .dialog-title {
     font-size: 0.95rem;
@@ -1783,7 +1930,7 @@ footer span {
     font-size: 0.78rem;
   }
   .dialog-body {
-    padding: 14px;
+    padding: 12px;
   }
   .dialog-img-container {
     max-height: 65vh;
@@ -1808,10 +1955,6 @@ footer span {
   </div>
 </div>
 
-<!-- MOUSE TRAIL -->
-<div id="cur"></div>
-<div id="cur2"></div>
-
 <!-- NAVIGATION -->
 <nav>
   <a href="#home" class="logo">Umm-e-Hani<span>.</span></a>
@@ -1824,7 +1967,10 @@ footer span {
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="Umm_e_hani_Resume.pdf" download="Umm_e_hani_Resume.pdf" class="nav-dl">⬇ Download CV (PDF)</a>
+  <a href="Umm_e_hani_Resume.pdf" download="Umm_e_hani_Resume.pdf" class="nav-dl">
+    <span class="dl-full">⬇ Download CV (PDF)</span>
+    <span class="dl-short">⬇ CV (PDF)</span>
+  </a>
 </nav>
 
 <!-- HERO SECTION -->
@@ -1845,7 +1991,7 @@ footer span {
     </h1>
     
     <p class="hero-desc">
-      Hi, I'm <strong>Umm-e-Hani</strong> a Karachi-based Software Developer & Data Science student. I engineer high-performance web applications, intelligent ML analytics, and enterprise digital solutions with cutting edge front-end and cloud architectures.
+      Hi, I'm <strong>Umm-e-Hani</strong> — a Karachi-based Software Developer & Data Science student. I engineer high-performance web applications, intelligent ML analytics, and enterprise digital solutions with cutting-edge front-end and cloud architectures.
     </p>
     
     <div class="hero-stats">
@@ -1884,9 +2030,9 @@ footer span {
         </div>
       </div>
       
-      <!-- HERO IMAGE (Sitting photo on Petrol Teal Armchair) -->
+      <!-- HERO IMAGE (Uses user's named file with fallbacks) -->
       <div class="photo-frame">
-        <img id="heroImg" src="profile_hero.jpg" alt="Umm-e-Hani - Full Stack Developer">
+        <img id="heroImg" src="landpageimage.jpeg" onerror="this.onerror=null; this.src='profile_hero.jpg';" alt="Umm-e-Hani - Full Stack Developer">
       </div>
       
       <!-- BOTTOM FLOATING BADGE -->
@@ -2062,7 +2208,7 @@ footer span {
   </div>
 </section>
 
-<!-- EXPERIENCE SECTION -->
+<!-- EXPERIENCE SECTION (RESTRUCTURED FOR NATURAL FULL-WIDTH READING) -->
 <section id="experience">
   <div class="r">
     <div class="sec-tag">Career Milestones</div>
@@ -2070,37 +2216,39 @@ footer span {
     
     <div class="exp-list">
       <div class="ex-card">
-        <div>
-          <div class="ex-role">Freelance Web Developer & Project Coordinator</div>
-          <div class="ex-co">Self-Employed — Karachi, Pakistan</div>
-          <ul class="ex-pts">
-            <li>Designed and engineered responsive web applications using HTML5, CSS3, JavaScript, PHP, React, and Angular with mobile-first performance.</li>
-            <li>Delivered an international car booking platform featuring country-based catalog filtering, real-time booking management, automated invoice PDF creation, and customer portal.</li>
-            <li>Constructed an e-commerce platform for a fashion brand utilizing WordPress and WooCommerce, including cart management and gateway setup.</li>
-            <li>Coordinated end-to-end sprint timelines and revisions using Trello, delivering milestone deliverables ahead of client schedules.</li>
-          </ul>
+        <div class="ex-top">
+          <div class="ex-top-info">
+            <h3 class="ex-role">Freelance Web Developer & Project Coordinator</h3>
+            <div class="ex-co">Self-Employed — Karachi, Pakistan</div>
+          </div>
+          <span class="ex-date">Oct 2024 – Present</span>
         </div>
-        <div class="ex-date">Oct 2024 – Present</div>
+        <ul class="ex-pts">
+          <li>Designed and developed responsive web solutions using HTML5, CSS3, JavaScript, PHP, React, and Angular, ensuring cross-browser compatibility and mobile-first performance.</li>
+          <li>Delivered a worldwide car booking web platform featuring car browsing by country, online booking management, automated PDF generation, and a second-hand marketplace.</li>
+          <li>Built an e-commerce store for a fashion brand utilizing WordPress and WooCommerce, with complete product catalog, shopping cart, and checkout flow.</li>
+          <li>Managed end-to-end project timelines, sprint planning, and client revisions using Trello to deliver milestones consistently.</li>
+        </ul>
       </div>
       
       <div class="ex-card">
-        <div>
-          <div class="ex-role">Sales Representative (Corporate Internship)</div>
-          <div class="ex-co">IJK Media — Karachi, Pakistan</div>
-          <ul class="ex-pts">
-            <li>Collaborated with corporate clients to present commercial digital marketing and brand solutions.</li>
-            <li>Honed client discovery, proposal pitch strategies, negotiation, and cross-functional team communication in a dynamic business environment.</li>
-          </ul>
+        <div class="ex-top">
+          <div class="ex-top-info">
+            <h3 class="ex-role">Sales Representative (Corporate Internship)</h3>
+            <div class="ex-co">IJK Media — Karachi, Pakistan</div>
+          </div>
+          <span class="ex-date">Nov 2025 – Jan 2026</span>
         </div>
-        <div class="ex-date">Nov 2025 – Jan 2026</div>
+        <ul class="ex-pts">
+          <li>Engaged with prospective clients to present corporate digital marketing and commercial web offerings clearly and persuasively.</li>
+          <li>Honed client relationship management, negotiation, follow-up, and cross-functional team collaboration skills in a high-tempo business environment.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     PROJECTS SECTION (PROPER FULL-COVER IMAGES)
-     ========================================================== -->
+<!-- PROJECTS SECTION -->
 <section id="projects">
   <div class="r">
     <div class="sec-tag">Featured Work</div>
@@ -2111,7 +2259,7 @@ footer span {
       <div class="proj-card featured-hack">
         <div class="proj-top">
           <div class="proj-badge-top">🏆 Hackathon 2026</div>
-          <img src="techbridge_ai.jpg" alt="TechBridge AI - JARVIS for Developers" class="proj-img">
+          <img src="techbridgeai.jpeg" onerror="this.onerror=null; this.src='techbridge_ai.jpg';" alt="TechBridge AI - JARVIS for Developers" class="proj-img">
           <div class="proj-top-overlay"></div>
         </div>
         <div class="proj-body">
@@ -2130,7 +2278,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 2. ExamMate AI (with full cover) -->
+      <!-- 2. ExamMate AI -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="exammate_cover.jpg" alt="ExamMate AI" class="proj-img">
@@ -2152,7 +2300,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 3. DevIgniteStudio (with full cover) -->
+      <!-- 3. DevIgniteStudio -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="devnie.png" alt="DevIgniteStudio" class="proj-img">
@@ -2173,7 +2321,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 4. Modern Dental Clinic (with full cover) -->
+      <!-- 4. Modern Dental Clinic -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="clincil.png" alt="Modern Dental Clinic" class="proj-img">
@@ -2195,7 +2343,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 5. Luxury Hotel Booking (with full cover) -->
+      <!-- 5. Luxury Hotel Booking -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="hotel.png" alt="Luxury Hotel Booking" class="proj-img">
@@ -2217,7 +2365,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 6. Art Gallery System (with full cover) -->
+      <!-- 6. Art Gallery System -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="art.png" alt="Art Gallery Management" class="proj-img">
@@ -2239,7 +2387,7 @@ footer span {
         </div>
       </div>
 
-      <!-- 7. Smart Campus Platform (with full cover) -->
+      <!-- 7. Smart Campus Platform -->
       <div class="proj-card">
         <div class="proj-top">
           <img src="campus.png" alt="Smart Campus Platform" class="proj-img">
@@ -2248,7 +2396,7 @@ footer span {
         <div class="proj-body">
           <div class="proj-name">Smart Campus Platform</div>
           <div class="proj-desc">
-            Comprehensive educational management portal engineered with Python microservices and flexible document-oriented NoSQL storage for student data.
+            Comprehensive educational management portal engineered with Python microservices and flexible document-oriented NoSQL database architecture for student academic records.
           </div>
           <div class="proj-foot">
             <div class="tech-row">
@@ -2289,7 +2437,7 @@ footer span {
       <div class="cert-card featured-hack-cert" data-category="ai" onclick="openCertModal(0)">
         <div class="cert-pill wine-pill">🏆 Hackathon 2026</div>
         <div class="cert-img-wrap">
-          <img src="cert_alibaba_hackathon.jpg" alt="Alibaba Cloud AI Hackathon Pakistan 2026 Certificate">
+          <img src="AIhackathon.jpeg" onerror="this.onerror=null; this.src='cert_alibaba_hackathon.jpg';" alt="Alibaba Cloud AI Hackathon Pakistan 2026 Certificate">
           <div class="cert-zoom-overlay">
             <span class="zoom-btn">🔍 View Full Certificate</span>
           </div>
@@ -2309,7 +2457,7 @@ footer span {
       <div class="cert-card featured-cert" data-category="bi" onclick="openCertModal(1)">
         <div class="cert-pill teal-pill">📊 Advanced BI & Analytics</div>
         <div class="cert-img-wrap">
-          <img src="cert_saylor_bi.jpg" alt="Saylor University BUS610 Certificate">
+          <img src="saylorunicertificate.jpeg" onerror="this.onerror=null; this.src='cert_saylor_bi.jpg';" alt="Saylor University BUS610 Certificate">
           <div class="cert-zoom-overlay">
             <span class="zoom-btn">🔍 View Full Certificate</span>
           </div>
@@ -2511,28 +2659,7 @@ window.addEventListener('load', () => {
 });
 
 // ==========================================
-// 2. MOUSE CURSOR TRAIL (PETROL TEAL & WINE)
-// ==========================================
-const cur = document.getElementById('cur');
-const cur2 = document.getElementById('cur2');
-let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-let rx = mx, ry = my;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-  cur.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-});
-
-(function animCursor() {
-  rx += (mx - rx) * 0.16;
-  ry += (my - ry) * 0.16;
-  cur2.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
-  requestAnimationFrame(animCursor);
-})();
-
-// ==========================================
-// 3. BACKGROUND DUAL-COLORED PARTICLES
+// 2. BACKGROUND DUAL-COLORED PARTICLES
 // ==========================================
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
@@ -2578,7 +2705,7 @@ class Particle {
   }
 }
 
-for (let i = 0; i < 55; i++) {
+for (let i = 0; i < 45; i++) {
   particles.push(new Particle());
 }
 
@@ -2593,7 +2720,7 @@ function animateParticles() {
 animateParticles();
 
 // ==========================================
-// 4. SCROLL REVEAL OBSERVER
+// 3. SCROLL REVEAL OBSERVER
 // ==========================================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -2601,12 +2728,12 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.add('v');
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
 document.querySelectorAll('.r').forEach(el => observer.observe(el));
 
 // ==========================================
-// 5. SMOOTH SCROLLING FOR ANCHORS
+// 4. SMOOTH SCROLLING FOR ANCHORS
 // ==========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -2622,18 +2749,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==========================================
-// 6. CERTIFICATE SHOWCASE & CLEAN LIGHTBOX
+// 5. CERTIFICATE SHOWCASE & CLEAN LIGHTBOX
 // ==========================================
 const certData = [
   {
     id: 'alibaba-hackathon',
     title: 'Alibaba Cloud AI Hackathon Pakistan 2026',
-    image: 'cert_alibaba_hackathon.jpg'
+    image: 'AIhackathon.jpeg'
   },
   {
     id: 'saylor-bi',
     title: 'BUS610: Advanced Business Intelligence and Analytics — Saylor University',
-    image: 'cert_saylor_bi.jpg'
+    image: 'saylorunicertificate.jpeg'
   },
   {
     id: 'uniathena-python',
@@ -2701,7 +2828,7 @@ certDialog.addEventListener('click', (e) => {
 });
 
 // ==========================================
-// 7. CERTIFICATE FILTER TABS
+// 6. CERTIFICATE FILTER TABS
 // ==========================================
 const tabs = document.querySelectorAll('.cert-tab');
 const certCards = document.querySelectorAll('.cert-card');
